@@ -576,6 +576,10 @@ body {
   background: rgba(147, 51, 234, 0.1);
 }
 
+.nav-item:last-child {
+  display: none;
+}
+
 .nav-icon {
   width: 20px;
   height: 20px;

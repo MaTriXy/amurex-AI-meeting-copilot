@@ -883,38 +883,6 @@ function showNotificationContextual(extensionStatusJSON) {
   buttonContainer.style.cssText =
     "display: flex; justify-content: center; margin-top: 10px;";
 
-  // Create Open Panel button
-  let openPanelButton = document.createElement("button");
-  openPanelButton.textContent = "Upload Meeting Files";
-  openPanelButton.style.cssText = `
-    background: #c76dcc;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: "Host Grotesk", sans-serif;
-    font-weight: 500;
-    transition: background 0.2s;
-  `;
-
-  openPanelButton.addEventListener("mouseover", () => {
-    openPanelButton.style.background = "#c76dcc";
-  });
-
-  openPanelButton.addEventListener("mouseout", () => {
-    openPanelButton.style.background = "#c76dcc";
-  });
-
-  // Add click handler
-  openPanelButton.addEventListener("click", () => {
-    const meetingId = window.location.pathname.split("/")[1].split("?")[0];
-    chrome.runtime.sendMessage({
-      type: "open_file_upload_panel",
-      meetingId: meetingId,
-    });
-    obj.remove(); // Remove notification after clicking
-  });
 
   // Remove banner after 5s
   setTimeout(() => {
